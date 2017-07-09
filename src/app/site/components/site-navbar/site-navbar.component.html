@@ -1,15 +1,17 @@
 <div class="main-container">
-  <div class="logo-container">
-    <h1 class="logo-text" (click)="clearComponent()">Productiv</h1>
-    <a class="fa fa-bars" (click)="toggleNavbar()" *ngIf="!navbarVisible"></a>
-    <a class="fa fa-times" (click)="toggleNavbar()" *ngIf="navbarVisible"></a>
+  <div class="navbar-container">
+    <div class="logo-container">
+      <h1 class="logo-text" (click)="clearComponent()">Productiv</h1>
+      <a class="fa fa-bars" (click)="toggleNavbar()" *ngIf="!navbarVisible"></a>
+      <a class="fa fa-times" (click)="toggleNavbar()" *ngIf="navbarVisible"></a>
+    </div>
+    <ul class="navbar" (window:resize)="resizeNavbarVisibility()" [ngStyle]="navbarStyle()">
+      <div class="navbar-left">
+      </div>
+      <div class="navbar-right">
+        <li class="navbar-item" (click)="setComponent('register')"><i class="fa fa-pencil-square-o"></i>Register</li>
+        <li class="navbar-item" (click)="setComponent('login')"><i class="fa fa-sign-in"></i>Login</li>
+      </div>
+    </ul>
   </div>
-  <ul class="navbar" (window:resize)="resizeNavbarVisibility()" [ngStyle]="navbarStyle()">
-    <div class="navbar-left">
-    </div>
-    <div class="navbar-right">
-      <li class="navbar-item" (click)="setComponent('register')"><i class="fa fa-pencil-square-o"></i>Register</li>
-      <li class="navbar-item" (click)="setComponent('login')"><i class="fa fa-sign-in"></i>Login</li>
-    </div>
-  </ul>
 </div>

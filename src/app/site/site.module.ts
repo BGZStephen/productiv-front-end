@@ -8,7 +8,7 @@ import { SiteLoginComponent } from './components/site-login/site-login.component
 import { SiteNavbarComponent } from './components/site-navbar/site-navbar.component';
 import { SiteHomeComponent } from './components/site-home/site-home.component';
 
-import { routes } from "../app.routes"
+import { SiteRoutes } from "./site.routes"
 
 @NgModule({
   declarations: [SiteViewComponent, SiteRegisterComponent, SiteLoginComponent, SiteNavbarComponent, SiteHomeComponent],
@@ -16,7 +16,7 @@ import { routes } from "../app.routes"
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes
+    SiteRoutes
   ],
   providers: [],
   bootstrap: []

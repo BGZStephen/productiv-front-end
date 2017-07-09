@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { routes } from "./app.routes"
+import { AppRoutes } from "./app.routes"
 
 import { AppComponent } from './app.component';
 
@@ -18,7 +18,7 @@ import { DashboardModule } from "./dashboard/dashboard.module"
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes,
+    AppRoutes,
     SiteModule,
     DashboardModule
   ],
