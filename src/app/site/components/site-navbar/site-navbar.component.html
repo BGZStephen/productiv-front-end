@@ -1,5 +1,14 @@
-<ul>
-  <li (click)="clearComponent()">Home</li>
-  <li (click)="setComponent('register')">Register</li>
-  <li (click)="setComponent('login')">Login</li>
-</ul>
+<div class="main-container">
+  <div class="logo-container">
+    <h1 class="logo-text" (click)="clearComponent()">Productiv</h1>
+    <a class="fa fa-bars"></a>
+  </div>
+  <ul class="navbar">
+    <div class="navbar-left">
+    </div>
+    <div class="navbar-right">
+      <li class="navbar-item" (click)="setComponent('register')">Register</li>
+      <li class="navbar-item" (click)="setComponent('login')">Login</li>
+    </div>
+  </ul>
+</div>
