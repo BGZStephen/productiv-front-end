@@ -9,11 +9,11 @@
 
 .logo-container {
   align-items: center;
+  border-bottom: 2px solid #222;
   display: flex;
   padding: 5px 10px;
   position: relative;
   @media(min-width: 768px) {
-    border-bottom: 2px solid #222;
   }
 }
 
@@ -21,7 +21,8 @@
   color: #cc4633;
 }
 
-.fa-bars {
+.fa-bars,
+.fa-times {
   color: #cc4633;
   font-size: 1.6em;
   position: absolute;
@@ -37,16 +38,26 @@
 }
 
 .navbar {
-  border-bottom: 2px solid #222;
-  border-top: 2px solid #222;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 50px;
+  transition: 0.3s all ease;
   width: 100%;
   @media(min-width: 768px) {
     align-items: center;
     border-top: none;
     flex-direction: row;
+    position: relative;
+    transition: 0s all ease;
+    top: 0;
   }
+}
+
+.fa-pencil-square-o,
+.fa-sign-in {
+  margin-right: 5px;
+  width: 25px;
 }
 
 .navbar-item {

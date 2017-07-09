@@ -10,7 +10,9 @@ export class SiteNavbarComponent implements OnInit {
 
   constructor(
     private router: Router
-  ) { }
+  ) {}
+
+  navbarVisible: boolean = false;
 
   ngOnInit() {
   }
@@ -21,6 +23,28 @@ export class SiteNavbarComponent implements OnInit {
 
   setComponent(component) {
     this.router.navigate(['/site', {outlets: {'siteOutlet': [component]}}]);
+  }
+
+  toggleNavbar() {
+    this.navbarVisible = !this.navbarVisible
+  }
+
+  resizeNavbarVisibility() {
+    if(screen.width >= 768) {
+      this.navbarVisible = false
+    }
+  }
+
+  navbarStyle() {
+    if(screen.width >= 768) {
+      this.navbarVisible = true
+      return {}
+    }
+    if(this.navbarVisible) {
+      return {'left': '0'}
+    } else {
+      return {'left': '-100vw'}
+    }
   }
 
 }
