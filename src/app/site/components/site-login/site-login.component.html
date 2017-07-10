@@ -1,3 +1,11 @@
-<p>
-  site-login works!
-</p>
+<div class="main-container">
+  <div class="login-container">
+    <form class="login-form" #f="ngForm">
+      <label class="login-label" for="email">Email</label>
+      <input class="login-input" type="text" placeholder="john@doe.com" name="email" #email ngModel>
+      <label class="login-label" for="password">Password</label>
+      <input class="login-input" type="password" placeholder="password" name="password" #password ngModel>
+      <input class="login-submit" type="submit" value="login">
+    </form>
+  </div>
+</div>
