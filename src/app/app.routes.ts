@@ -6,7 +6,7 @@ const APP_ROUTES: Routes = [
   {path: "", redirectTo: "/site", pathMatch: "full"},
   {
     path: 'site',
-    loadChildren: 'src/site/site.module#SiteModule'
+    loadChildren: 'src/website/website.module#WebsiteModule'
   }
 ]
 
