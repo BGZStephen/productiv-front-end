@@ -8,7 +8,7 @@ import { WebsiteLoginComponent } from './components/website-login/website-login.
 import { WebsiteNavbarComponent } from './components/website-navbar/website-navbar.component';
 import { WebsiteHomeComponent } from './components/website-home/website-home.component';
 
-import { WebsiteRoutes } from "./website.routes"
+import { WebsiteRoutes } from './website.routes';
 
 @NgModule({
   declarations: [WebsiteViewComponent, WebsiteRegisterComponent, WebsiteLoginComponent, WebsiteNavbarComponent, WebsiteHomeComponent],
