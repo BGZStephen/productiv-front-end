@@ -21,4 +21,4 @@ import { SiteRoutes } from "./site.routes"
   providers: [],
   bootstrap: []
 })
-export class SiteModule { }
+export class WebsiteModule { }
