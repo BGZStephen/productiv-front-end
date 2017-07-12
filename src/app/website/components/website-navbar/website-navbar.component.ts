@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class WebsiteNavbarComponent implements OnInit {
 
-  navbarVisible = false;
+  navbarVisible;
 
   constructor(
     private router: Router
@@ -18,11 +18,11 @@ export class WebsiteNavbarComponent implements OnInit {
   }
 
   clearComponent() {
-    this.router.navigate(['/site', {outlets: {'siteOutlet': null}}]);
+    this.router.navigate(['/site', {outlets: {'websiteOutlet': null}}]);
   }
 
   setComponent(component) {
-    this.router.navigate(['/site', {outlets: {'siteOutlet': [component]}}]);
+    this.router.navigate(['/site', {outlets: {'websiteOutlet': [component]}}]);
   }
 
   toggleNavbar() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebsiteApiService } from '../../website-api.service';
 
 @Component({
   selector: 'app-website-register',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebsiteRegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: WebsiteApiService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  register(userObject) {
+    console.log(userObject);
+    // this.apiService.register(userObject)
   }
 
 }

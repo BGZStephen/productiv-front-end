@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="register-container">
-    <form class="register-form" #f="ngForm">
+    <form class="register-form" #f="ngForm" (ngSubmit)="register(f.value)">
       <label class="register-label" for="firstName">First name</label>
       <input id="firstName" class="register-input" type="text" placeholder="John" name="firstName" #firstName ngModel>
       <label class="register-label" for="lastName">Last name</label>

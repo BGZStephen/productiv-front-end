@@ -8,7 +8,9 @@ import { WebsiteLoginComponent } from './components/website-login/website-login.
 import { WebsiteNavbarComponent } from './components/website-navbar/website-navbar.component';
 import { WebsiteHomeComponent } from './components/website-home/website-home.component';
 
-import { WebsiteRoutes } from './website.routes';
+import { AppRoutes } from '../app.routes';
+
+import { WebsiteApiService } from './website-api.service';
 
 @NgModule({
   declarations: [WebsiteViewComponent, WebsiteRegisterComponent, WebsiteLoginComponent, WebsiteNavbarComponent, WebsiteHomeComponent],
@@ -16,9 +18,9 @@ import { WebsiteRoutes } from './website.routes';
     BrowserModule,
     FormsModule,
     HttpModule,
-    WebsiteRoutes
+    AppRoutes
   ],
-  providers: [],
+  providers: [WebsiteApiService],
   bootstrap: []
 })
 export class WebsiteModule { }

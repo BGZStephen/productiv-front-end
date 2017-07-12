@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
 import { AppComponent } from './app.component';
 
+import { AppRoutes } from './app.routes';
+
 // Modules
-import { WebsiteModule } from './website/website.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { WebsiteModule } from './website/website.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutes,
     WebsiteModule,
-    DashboardModule
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
