@@ -17,7 +17,13 @@ export class WebsiteRegisterComponent implements OnInit {
 
   register(userObject) {
     console.log(userObject);
-    // this.apiService.register(userObject)
+    this.apiService.register(userObject)
+    .subscribe(res => {
+      console.log(res)
+    },
+    error => {
+      console.log(error)
+    })
   }
 
 }
