@@ -224,6 +224,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular2-flash-messages@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/angular2-flash-messages/-/angular2-flash-messages-1.0.8.tgz#21e10833a8c044c1ea7c709480154949c2723463"
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -2785,10 +2789,6 @@ less@^2.7.2:
     promise "^7.1.1"
     request "^2.72.0"
     source-map "^0.5.3"
-
-lint@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/lint/-/lint-1.1.2.tgz#35ed064f322547c331358d899868664968ba371f"
 
 load-json-file@^1.0.0:
   version "1.1.0"
