@@ -5,14 +5,11 @@ import { HttpModule } from '@angular/http';
 import { FlashMessagesModule } from "angular2-flash-messages"
 
 // components
-import { WebsiteViewComponent } from './components/website-view/website-view.component';
-import { WebsiteRegisterComponent } from './components/website-register/website-register.component';
-import { WebsiteLoginComponent } from './components/website-login/website-login.component';
-import { WebsiteNavbarComponent } from './components/website-navbar/website-navbar.component';
-import { WebsiteHomeComponent } from './components/website-home/website-home.component';
+import { WebsiteViewComponent, WebsiteRegisterComponent, WebsiteLoginComponent,
+         WebsiteNavbarComponent, WebsiteHomeComponent } from './components/website-components-barrel';
 
 // routes
-import { AppRoutes } from '../app.routes';
+import { WebsiteRoutes } from './website.routes';
 
 // services
 import { WebsiteApiService } from './website-api.service';
@@ -30,7 +27,7 @@ import { WebsiteApiService } from './website-api.service';
     FlashMessagesModule,
     FormsModule,
     HttpModule,
-    AppRoutes,
+    WebsiteRoutes,
   ],
   providers: [WebsiteApiService],
   bootstrap: []

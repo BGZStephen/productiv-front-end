@@ -1,17 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardViewComponent } from './dashboard/components/dashboard-view/dashboard-view.component';
-
-import { WebsiteViewComponent, WebsiteNavbarComponent, WebsiteHomeComponent,
-         WebsiteLoginComponent, WebsiteRegisterComponent } from './website/components/website-components-barrel';
+import { DashboardViewComponent } from './modules/dashboard/components/dashboard-view/dashboard-view.component';
 
 const APP_ROUTES: Routes = [
   {path: '', redirectTo: '/site', pathMatch: 'full'},
-  {path: 'site', component: WebsiteViewComponent, children: [
-    {path: '', component: WebsiteHomeComponent, outlet: 'websiteOutlet'},
-    {path: 'login', component: WebsiteLoginComponent, outlet: 'websiteOutlet'},
-    {path: 'register', component: WebsiteRegisterComponent, outlet: 'websiteOutlet'}
-  ]}
+  {path: 'site', loadChildren: './modules/website/website.module#WebsiteModule'}
 ];
 
 export const AppRoutes = RouterModule.forRoot(APP_ROUTES);

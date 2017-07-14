@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 
 // Modules
-import { DashboardModule } from './dashboard/dashboard.module';
-import { WebsiteModule } from './website/website.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { WebsiteModule } from './modules/website/website.module';
 
 @NgModule({
   declarations: [
