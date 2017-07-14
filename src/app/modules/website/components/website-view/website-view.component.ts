@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FlashMessagesService } from 'angular2-flash-messages'
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-website-view',
