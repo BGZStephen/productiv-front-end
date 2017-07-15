@@ -22,7 +22,7 @@ export class WebsiteRegisterComponent implements OnInit {
   }
 
   register(userObject) {
-    const validationPass = this.validatorService.validateUser(userObject);
+    const validationPass = this.validatorService.validateRegistration(userObject);
     if (!validationPass) {
       return;
     } else {

@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="login-container">
-    <form class="login-form" #f="ngForm">
+    <form class="login-form" #f="ngForm" (ngSubmit)="login(f.value)">
       <label class="login-label" for="email">Email</label>
       <input class="login-input" type="text" placeholder="john@doe.com" name="email" #email ngModel>
       <label class="login-label" for="password">Password</label>

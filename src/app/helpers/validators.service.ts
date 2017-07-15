@@ -8,12 +8,23 @@ export class ValidatorsService {
     private notification: NotificationService,
   ) { }
 
-  validateUser(userObject) {
+  validateRegistration(userObject) {
     const nameValid = this.validateName(userObject.firstName, userObject.lastName);
     const emailValid = this.validateEmail(userObject.email);
-    const passwordValid = this.validatePassword(userObject.password, userObject.passwordConfirm);
+    const passwordValid = this.comparePassword(userObject.password, userObject.passwordConfirm);
 
     if (nameValid && emailValid && passwordValid) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  validateLogin(userObject) {
+    const emailValid = this.validateEmail(userObject.email);
+    const passwordValid = this.validatePasswordLength(userObject.password);
+
+    if (emailValid && passwordValid) {
       return true;
     } else {
       return false;
@@ -39,7 +50,16 @@ export class ValidatorsService {
     }
   }
 
-  validatePassword(password, passwordConfirm) {
+  validatePasswordLength(password) {
+    if(password.length == 0) {
+      this.notification.flashError('Password must not be empty');
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  comparePassword(password, passwordConfirm) {
     if (password.length <= 6) {
       this.notification.flashError('Password must be greater than 6 characters');
       return false;
