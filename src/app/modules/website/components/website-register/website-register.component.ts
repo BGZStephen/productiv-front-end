@@ -35,7 +35,7 @@ export class WebsiteRegisterComponent implements OnInit {
         }, 2000);
       },
       error => {
-        this.notificationService.flashError(error);
+        this.notificationService.flashError(`Error: ${error._body}`);
       });
     }
   }

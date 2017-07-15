@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WebsiteApiService } from '../../website-api.service';
 import { NotificationService } from '../../../../helpers/notification.service';
-import { ValidatorsService } from '../../../../helpers/validators.service'
+import { ValidatorsService } from '../../../../helpers/validators.service';
 
 @Component({
   selector: 'app-website-login',
@@ -28,15 +28,15 @@ export class WebsiteLoginComponent implements OnInit {
     } else {
       this.apiService.login(userObject)
       .subscribe(res => {
-        this.notificationService.flashSuccess("Login succesdsful");
+        this.notificationService.flashSuccess('Login succesdsful');
         this.apiService.storeToken(res.json().token);
         setTimeout(() => {
           this.router.navigate(['/dashboard']);
         }, 1500);
       },
       error => {
-        this.notificationService.flashError("Invalid email or password");
-      })
+        this.notificationService.flashError('Error: Invalid email or password');
+      });
     }
   }
 

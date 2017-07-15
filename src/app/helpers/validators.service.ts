@@ -51,7 +51,7 @@ export class ValidatorsService {
   }
 
   validatePasswordLength(password) {
-    if(password.length == 0) {
+    if (password.length === 0) {
       this.notification.flashError('Password must not be empty');
       return false;
     } else {
