@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 
 import { AppRoutes } from './app.routes';
 
-// Modules
+// services
+import { NotificationService } from './helpers/notification.service'
+import { ValidatorsService } from './helpers/validators.service'
+
+// modules
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { WebsiteModule } from './modules/website/website.module';
 
@@ -23,7 +27,7 @@ import { WebsiteModule } from './modules/website/website.module';
     WebsiteModule,
     DashboardModule,
   ],
-  providers: [],
+  providers: [NotificationService, ValidatorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

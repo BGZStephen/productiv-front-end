@@ -10,7 +10,10 @@ export class NotificationService {
 
   flashError(error) {
     this.flashMessage.show(error, {cssClass: 'flash-failure', timeout: 2000});
-    return false;
+  }
+
+  flashSuccess(message) {
+    this.flashMessage.show(message, {cssClass: 'flash-success', timeout: 2000});
   }
 
 }

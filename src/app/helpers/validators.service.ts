@@ -11,7 +11,7 @@ export class ValidatorsService {
   validateUser(userObject) {
     const nameValid = this.validateName(userObject.firstName, userObject.lastName);
     const emailValid = this.validateEmail(userObject.email);
-    const passwordValid = this.validatePassword(userObject.password, userObject.confirmPassword);
+    const passwordValid = this.validatePassword(userObject.password, userObject.passwordConfirm);
 
     if (nameValid && emailValid && passwordValid) {
       return true;
@@ -30,8 +30,9 @@ export class ValidatorsService {
   }
 
   validateEmail(email) {
+    console.log(email)
     const regex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,9}/;
-    if (!regex.test(email)) {
+    if (!regex.test(email.toUpperCase())) {
       this.notification.flashError('Invalid Email address');
       return false;
     } else {
@@ -39,11 +40,11 @@ export class ValidatorsService {
     }
   }
 
-  validatePassword(password, confirmPassword) {
+  validatePassword(password, passwordConfirm) {
     if (password.length <= 6) {
       this.notification.flashError('Password must be greater than 6 characters');
       return false;
-    } else if (password !== confirmPassword) {
+    } else if (password !== passwordConfirm) {
       this.notification.flashError('Password confirmation does not match');
       return false;
     } else {

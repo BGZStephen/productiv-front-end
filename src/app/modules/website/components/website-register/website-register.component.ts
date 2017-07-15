@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsiteApiService } from '../../website-api.service';
-import { FlashMessagesService } from 'angular2-flash-messages';
 import { ValidatorsService } from '../../../../helpers/validators.service';
+import { NotificationService } from '../../../../helpers/notification.service'
 
 @Component({
   selector: 'app-website-register',
@@ -12,7 +12,7 @@ export class WebsiteRegisterComponent implements OnInit {
 
   constructor(
     private apiService: WebsiteApiService,
-    private flashMessage: FlashMessagesService,
+    private notificationService: NotificationService,
     private validatorService: ValidatorsService,
   ) { }
 
@@ -26,10 +26,10 @@ export class WebsiteRegisterComponent implements OnInit {
     } else {
       this.apiService.register(userObject)
       .subscribe(res => {
-        console.log(res);
+        this.notificationService.flashSuccess("Registration successful")
       },
       error => {
-        console.log(error);
+        this.notificationService.flashError(error)
       });
     }
   }
