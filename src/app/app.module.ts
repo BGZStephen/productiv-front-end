@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 
 // services
-import { NotificationService } from './helpers/notification.service'
-import { ValidatorsService } from './helpers/validators.service'
+import { NotificationService } from './helpers/notification.service';
+import { ValidatorsService } from './helpers/validators.service';
 
 // modules
 import { DashboardModule } from './modules/dashboard/dashboard.module';

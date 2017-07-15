@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { WebsiteApiService } from '../../website-api.service';
 import { ValidatorsService } from '../../../../helpers/validators.service';
-import { NotificationService } from '../../../../helpers/notification.service'
+import { NotificationService } from '../../../../helpers/notification.service';
 
 @Component({
   selector: 'app-website-register',
@@ -13,6 +14,7 @@ export class WebsiteRegisterComponent implements OnInit {
   constructor(
     private apiService: WebsiteApiService,
     private notificationService: NotificationService,
+    private router: Router,
     private validatorService: ValidatorsService,
   ) { }
 
@@ -26,10 +28,14 @@ export class WebsiteRegisterComponent implements OnInit {
     } else {
       this.apiService.register(userObject)
       .subscribe(res => {
-        this.notificationService.flashSuccess("Registration successful")
+        this.notificationService.flashSuccess('Registration successful');
+        this.apiService.storeToken(res.json().token);
+        setTimeout(() => {
+          this.router.navigate(['/dashboard']);
+        }, 2000);
       },
       error => {
-        this.notificationService.flashError(error)
+        this.notificationService.flashError(error);
       });
     }
   }

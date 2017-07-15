@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
@@ -9,7 +10,7 @@ export class WebsiteApiService {
   apiUrl: String = environment.apiUrl;
 
   constructor(
-    private http: Http
+    private http: Http,
   ) { }
 
   login(userObject) {
@@ -18,6 +19,10 @@ export class WebsiteApiService {
 
   register(userObject) {
     return this.http.post(`${this.apiUrl}/users?siteAuthToken=${this.siteAuthToken}`, userObject);
+  }
+
+  storeToken(token) {
+    localStorage.setItem('token', token);
   }
 
 }
