@@ -1,9 +1,9 @@
 <div class="main-container">
   <div class="navbar-toggle-container">
-    <i class="fa fa-bars"></i>
+    <i class="fa fa-bars" (click)="menuVisibilityToggle()"></i>
   </div>
-  <div class="navbar">
-    <ul class="top-level-menu">
+  <div class="navbar" (window:resize)="menuVisibilityOnResize()">
+    <ul class="top-level-menu" [ngStyle]="menuVisibilityStyling()">
       <li class="top-level-item">
         <div class="top-level-item-content">
           <i class="fa fa-home"></i>
@@ -17,12 +17,12 @@
         </div>
       </li>
       <li class="top-level-item">
-        <div class="top-level-item-content">
+        <div class="top-level-item-content" (click)="submenuVisibilityToggle(0)">
           <i class="fa fa-microchip"></i>
           <p class="menu-item-header">Modules</p>
           <i class="fa fa-caret-down"></i>
         </div>
-        <ul class="second-level-menu">
+        <ul class="second-level-menu" [ngStyle]="submenuVisibilityStyling(0)">
           <li class="second-level-item">
             <div class="second-level-item-content">
               <i class="fa fa-plus"></i>
