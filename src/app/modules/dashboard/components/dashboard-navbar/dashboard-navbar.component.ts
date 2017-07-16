@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuBuilderService } from '../../services/menu-builder.service';
 
 @Component({
@@ -13,15 +14,20 @@ export class DashboardNavbarComponent implements OnInit {
   menu: Array<object> = [];
 
   constructor(
-    private menuBuilder: MenuBuilderService
+    private menuBuilder: MenuBuilderService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.menu = this.menuBuilder.buildNavbar();
   }
 
-  menuVisibilityToggle() {
-    this.menuVisible = !this.menuVisible;
+  menuVisibilityOnResize() {
+    if (screen.width >= 1024) {
+      this.menuVisible = true;
+    } else {
+      this.menuVisible = false;
+    }
   }
 
   menuVisibilityStyling() {
@@ -35,19 +41,17 @@ export class DashboardNavbarComponent implements OnInit {
     }
   }
 
-  menuVisibilityOnResize() {
-    if (screen.width >= 1024) {
-      this.menuVisible = true;
-    } else {
-      this.menuVisible = false;
-    }
+  menuVisibilityToggle() {
+    this.menuVisible = !this.menuVisible;
   }
 
-  submenuVisibilityToggle(index) {
-    if (index === this.activeSubmenu) {
-      this.activeSubmenu = -1;
+  setComponent(component) {
+    if (component == null) {
+      this.router.navigate(['/dashboard', {outlets: {'dashboardOutlet': null}}]);
+    } else if(component.length == 0) {
+      return;
     } else {
-      this.activeSubmenu = index;
+      this.router.navigate(['/dashboard', {outlets: {'dashboardOutlet': [component]}}]);
     }
   }
 
@@ -58,7 +62,15 @@ export class DashboardNavbarComponent implements OnInit {
       const maxHeight = (
         document.getElementsByClassName('top-level-menu')[index]
         .getElementsByClassName('second-level-menu')[0].children.length * 45) + 'px';
-      return {'max-height': maxHeight};
+        return {'max-height': maxHeight};
+      }
+    }
+
+  submenuVisibilityToggle(index) {
+    if (index === this.activeSubmenu) {
+      this.activeSubmenu = -1;
+    } else {
+      this.activeSubmenu = index;
     }
   }
 

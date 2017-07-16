@@ -5,7 +5,10 @@ import { DashboardViewComponent, DashboardHomeComponent} from './components/dash
 
 const DASHBOARD_ROUTES: Routes = [
   {path: 'dashboard', component: DashboardViewComponent, children: [
-    {path: '', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'home', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
+    {path: 'modules-add', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
+    {path: 'modules-manage', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
   ]}
 ];
 
