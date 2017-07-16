@@ -4,6 +4,20 @@
   width: 100%;
 }
 
+.navbar-toggle-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  @media(min-width: 1024px) {
+    display: none;
+  }
+}
+
+.fa-bars {
+  color: white;
+  padding: 12px 10px;
+}
+
 .navbar {
   background: #222;
   display: flex;
