@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuBuilderService } from '../../services/menu-builder.service';
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -9,10 +10,14 @@ export class DashboardNavbarComponent implements OnInit {
 
   activeSubmenu: number = -1;
   menuVisible = false;
+  menu: Array<object> = [];
 
-  constructor() { }
+  constructor(
+    private menuBuilder: MenuBuilderService
+  ) { }
 
   ngOnInit() {
+    this.menu = this.menuBuilder.buildNavbar();
   }
 
   menuVisibilityToggle() {
@@ -50,7 +55,9 @@ export class DashboardNavbarComponent implements OnInit {
     if (index !== this.activeSubmenu) {
       return {'max-height': '0'};
     } else {
-      const maxHeight = (document.getElementsByClassName('second-level-menu')[index].children.length * 45) + 'px';
+      const maxHeight = (
+        document.getElementsByClassName('top-level-menu')[index]
+        .getElementsByClassName('second-level-menu')[0].children.length * 45) + 'px';
       return {'max-height': maxHeight};
     }
   }

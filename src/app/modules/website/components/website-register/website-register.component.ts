@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { WebsiteApiService } from '../../website-api.service';
+import { ApiService } from '../../services/api.service';
 import { ValidatorsService } from '../../../../helpers/validators.service';
 import { NotificationService } from '../../../../helpers/notification.service';
 
@@ -12,7 +12,7 @@ import { NotificationService } from '../../../../helpers/notification.service';
 export class WebsiteRegisterComponent implements OnInit {
 
   constructor(
-    private apiService: WebsiteApiService,
+    private apiService: ApiService,
     private notificationService: NotificationService,
     private router: Router,
     private validatorService: ValidatorsService,

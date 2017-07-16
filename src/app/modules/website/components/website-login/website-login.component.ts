@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { WebsiteApiService } from '../../website-api.service';
+import { ApiService } from '../../services/api.service';
 import { NotificationService } from '../../../../helpers/notification.service';
 import { ValidatorsService } from '../../../../helpers/validators.service';
 
@@ -12,7 +12,7 @@ import { ValidatorsService } from '../../../../helpers/validators.service';
 export class WebsiteLoginComponent implements OnInit {
 
   constructor(
-    private apiService: WebsiteApiService,
+    private apiService: ApiService,
     private notificationService: NotificationService,
     private router: Router,
     private validatorService: ValidatorsService,

@@ -2,46 +2,22 @@
   <div class="navbar-toggle-container">
     <i class="fa fa-bars" (click)="menuVisibilityToggle()"></i>
   </div>
-  <div class="navbar" (window:resize)="menuVisibilityOnResize()">
-    <ul class="top-level-menu" [ngStyle]="menuVisibilityStyling()">
+  <div class="navbar" (window:resize)="menuVisibilityOnResize()" *ngIf="menu">
+    <ul class="top-level-menu" [ngStyle]="menuVisibilityStyling()" *ngFor="let topLevelMenu of menu; let i = index">
       <li class="top-level-item">
         <div class="top-level-item-content">
-          <i class="fa fa-home"></i>
-          <p class="menu-item-header">Home</p>
+          <i class="fa" [ngClass]="topLevelMenu.icon"></i>
+          <p class="menu-item-header">{{topLevelMenu.title}}</p>
+          <i class="fa fa-caret-down" *ngIf="topLevelMenu.hasSubmenu" (click)="submenuVisibilityToggle(i)"></i>
         </div>
-      </li>
-      <li class="top-level-item">
-        <div class="top-level-item-content">
-          <i class="fa fa-user"></i>
-          <p class="menu-item-header">Profile</p>
-        </div>
-      </li>
-      <li class="top-level-item">
-        <div class="top-level-item-content" (click)="submenuVisibilityToggle(0)">
-          <i class="fa fa-microchip"></i>
-          <p class="menu-item-header">Modules</p>
-          <i class="fa fa-caret-down"></i>
-        </div>
-        <ul class="second-level-menu" [ngStyle]="submenuVisibilityStyling(0)">
-          <li class="second-level-item">
+        <ul class="second-level-menu" *ngIf="topLevelMenu.hasSubmenu" [ngStyle]="submenuVisibilityStyling(i)">
+          <li class="second-level-item" *ngFor="let submenu of topLevelMenu.submenu">
             <div class="second-level-item-content">
-              <i class="fa fa-plus"></i>
-              <p class="menu-item-header">Add</p>
-            </div>
-          </li>
-          <li class="second-level-item">
-            <div class="second-level-item-content">
-              <i class="fa fa-cogs"></i>
-              <p class="menu-item-header">Manage</p>
+              <i class="fa" [ngClass]="submenu.icon"></i>
+              <p class="menu-item-header">{{submenu.title}}</p>
             </div>
           </li>
         </ul>
-      </li>
-      <li class="top-level-item">
-        <div class="top-level-item-content">
-          <i class="fa fa-power-off"></i>
-          <p class="menu-item-header">Logout</p>
-        </div>
       </li>
     </ul>
   </div>
