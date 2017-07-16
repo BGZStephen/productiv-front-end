@@ -7,23 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardNavbarComponent implements OnInit {
 
+  activeSubmenu: number = -1;
+  menuVisible = false;
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  activeSubmenu: number = -1;
-  menuVisible = false;
 
   menuVisibilityToggle() {
     this.menuVisible = !this.menuVisible;
   }
 
   menuVisibilityStyling() {
-    if(screen.width >= 1024) {
-      this.menuVisible = true
+    if (screen.width >= 1024) {
+      this.menuVisible = true;
     }
-    if(!this.menuVisible) {
+    if (!this.menuVisible) {
       return {'visibility': '0', 'opacity': '0'};
     } else {
       return {'visibility': '1', 'opacity': '1'};
@@ -31,15 +31,15 @@ export class DashboardNavbarComponent implements OnInit {
   }
 
   menuVisibilityOnResize() {
-    if(screen.width >= 1024) {
-      this.menuVisible = true
+    if (screen.width >= 1024) {
+      this.menuVisible = true;
     } else {
-      this.menuVisible = false
+      this.menuVisible = false;
     }
   }
 
   submenuVisibilityToggle(index) {
-    if(index === this.activeSubmenu) {
+    if (index === this.activeSubmenu) {
       this.activeSubmenu = -1;
     } else {
       this.activeSubmenu = index;
@@ -47,11 +47,11 @@ export class DashboardNavbarComponent implements OnInit {
   }
 
   submenuVisibilityStyling(index) {
-    if(index !== this.activeSubmenu) {
-      return {'max-height': '0'}
+    if (index !== this.activeSubmenu) {
+      return {'max-height': '0'};
     } else {
-      let maxHeight = (document.getElementsByClassName('second-level-menu')[index].children.length * 45) + 'px'
-      return {'max-height': maxHeight}
+      const maxHeight = (document.getElementsByClassName('second-level-menu')[index].children.length * 45) + 'px';
+      return {'max-height': maxHeight};
     }
   }
 
