@@ -1,3 +1,11 @@
 <div class="main-container">
-  <router-outlet name="dashboardOutlet"></router-outlet>
+  <div class="notification-bar-container">
+    <app-dashboard-notification-bar></app-dashboard-notification-bar>
+  </div>
+  <div class="navbar-container">
+    <app-dashboard-navbar></app-dashboard-navbar>
+  </div>
+  <div class="output-container">
+    <router-outlet name="dashboardOutlet"></router-outlet>
+  </div>
 </div>
