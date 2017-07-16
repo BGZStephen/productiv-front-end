@@ -46,9 +46,9 @@ export class DashboardNavbarComponent implements OnInit {
   }
 
   setComponent(component) {
-    if (component == null) {
+    if (component === null) {
       this.router.navigate(['/dashboard', {outlets: {'dashboardOutlet': null}}]);
-    } else if(component.length == 0) {
+    } else if (component.length === 0) {
       return;
     } else {
       this.router.navigate(['/dashboard', {outlets: {'dashboardOutlet': [component]}}]);
