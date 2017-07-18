@@ -14,11 +14,15 @@ export class ApiService {
   ) { }
 
   login(userObject) {
-    return this.http.post(`${this.apiUrl}/users/authenticate?siteAuthToken=${this.siteAuthToken}`, userObject);
+    let headers = new Headers()
+    headers.append('Authorization', `${this.siteAuthToken}`)
+    return this.http.post(`${this.apiUrl}/users/authenticate?siteAuthToken=${this.siteAuthToken}`, userObject, {headers: headers});
   }
 
   register(userObject) {
-    return this.http.post(`${this.apiUrl}/users?siteAuthToken=${this.siteAuthToken}`, userObject);
+    let headers = new Headers()
+    headers.append('Authorization', `${this.siteAuthToken}`)
+    return this.http.post(`${this.apiUrl}/users?siteAuthToken=${this.siteAuthToken}`, userObject, {headers: headers});
   }
 
   storeToken(token) {
