@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable()
-export class ApiService {
+export class ProductivApiService {
 
   siteAuthToken: String = environment.siteAuthToken;
   apiUrl: String = environment.apiUrl;
@@ -14,14 +13,14 @@ export class ApiService {
   ) { }
 
   login(userObject) {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.siteAuthToken}`)
+    const headers = new Headers();
+    headers.append('Authorization', `${this.siteAuthToken}`);
     return this.http.post(`${this.apiUrl}/users/authenticate?siteAuthToken=${this.siteAuthToken}`, userObject, {headers: headers});
   }
 
   register(userObject) {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.siteAuthToken}`)
+    const headers = new Headers();
+    headers.append('Authorization', `${this.siteAuthToken}`);
     return this.http.post(`${this.apiUrl}/users?siteAuthToken=${this.siteAuthToken}`, userObject, {headers: headers});
   }
 

@@ -11,9 +11,6 @@ import { WebsiteViewComponent, WebsiteRegisterComponent, WebsiteLoginComponent,
 // routes
 import { WebsiteRoutes } from './website.routes';
 
-// services
-import { ApiService } from './services/api.service';
-
 @NgModule({
   declarations: [
     WebsiteViewComponent,
@@ -29,7 +26,7 @@ import { ApiService } from './services/api.service';
     HttpModule,
     WebsiteRoutes,
   ],
-  providers: [ApiService],
+  providers: [],
   bootstrap: []
 })
 export class WebsiteModule { }

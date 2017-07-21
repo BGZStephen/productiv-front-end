@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
-import { ValidatorsService } from '../../../../helpers/validators.service';
-import { NotificationService } from '../../../../helpers/notification.service';
+import { ProductivApiService } from '../../../../services/productiv-api.service';
+import { ValidatorsService } from '../../../../services/validators.service';
+import { NotificationService } from '../../../../services/notification.service';
 
 @Component({
   selector: 'app-website-register',
@@ -12,7 +12,7 @@ import { NotificationService } from '../../../../helpers/notification.service';
 export class WebsiteRegisterComponent implements OnInit {
 
   constructor(
-    private apiService: ApiService,
+    private apiService: ProductivApiService,
     private notificationService: NotificationService,
     private router: Router,
     private validatorService: ValidatorsService,

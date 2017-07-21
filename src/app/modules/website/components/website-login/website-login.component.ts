@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
-import { NotificationService } from '../../../../helpers/notification.service';
-import { ValidatorsService } from '../../../../helpers/validators.service';
+import { ProductivApiService } from '../../../../services/productiv-api.service';
+import { NotificationService } from '../../../../services/notification.service';
+import { ValidatorsService } from '../../../../services/validators.service';
 
 @Component({
   selector: 'app-website-login',
@@ -12,7 +12,7 @@ import { ValidatorsService } from '../../../../helpers/validators.service';
 export class WebsiteLoginComponent implements OnInit {
 
   constructor(
-    private apiService: ApiService,
+    private apiService: ProductivApiService,
     private notificationService: NotificationService,
     private router: Router,
     private validatorService: ValidatorsService,

@@ -9,10 +9,6 @@ import { DashboardViewComponent, DashboardNavbarComponent, DashboardHomeComponen
 // Routes
 import { DashboardRoutes } from './dashboard.routes';
 
-// services
-import { ApiService } from './services/api.service';
-import { MenuBuilderService } from './services/menu-builder.service';
-
 @NgModule({
   declarations: [
     DashboardViewComponent,
@@ -27,7 +23,7 @@ import { MenuBuilderService } from './services/menu-builder.service';
     DashboardRoutes,
     FlashMessagesModule
   ],
-  providers: [ApiService, MenuBuilderService],
+  providers: [],
   bootstrap: []
 })
 export class DashboardModule { }
