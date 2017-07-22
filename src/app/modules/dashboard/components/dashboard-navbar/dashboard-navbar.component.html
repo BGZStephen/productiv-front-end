@@ -5,16 +5,16 @@
   <div class="navbar" (window:resize)="menuVisibilityOnResize()" *ngIf="menu">
     <ul class="top-level-menu" [ngStyle]="menuVisibilityStyling()" *ngFor="let topLevelMenu of menu; let i = index">
       <li class="top-level-item">
-        <div class="top-level-item-content" (click)="submenuVisibilityToggle(i); setComponent(topLevelMenu.component)">
+        <div class="top-level-item-content" [routerLink]="topLevelMenu.route" (click)="submenuVisibilityToggle(i)">
           <i class="fa" [ngClass]="topLevelMenu.icon"></i>
           <p class="menu-item-header">{{topLevelMenu.title}}</p>
           <i class="fa fa-caret-down" *ngIf="topLevelMenu.hasSubmenu"></i>
         </div>
         <ul class="second-level-menu" *ngIf="topLevelMenu.hasSubmenu" [ngStyle]="submenuVisibilityStyling(i)">
-          <li class="second-level-item" (click)="setComponent(submenu.component)" *ngFor="let submenu of topLevelMenu.submenu">
-            <div class="second-level-item-content">
-              <i class="fa" [ngClass]="submenu.icon"></i>
-              <p class="menu-item-header">{{submenu.title}}</p>
+          <li class="second-level-item" [routerLink]="secondLevelMenu.route" *ngFor="let secondLevelMenu of topLevelMenu.submenu">
+            <div class="second-level-item-content" >
+              <i class="fa" [ngClass]="secondLevelMenu.icon"></i>
+              <p class="menu-item-header">{{secondLevelMenu.title}}</p>
             </div>
           </li>
         </ul>

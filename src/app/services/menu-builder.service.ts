@@ -16,7 +16,7 @@ export class MenuBuilderService {
   addDefaults() {
     const homeNavItem = {
       icon: 'fa-home',
-      component: 'home',
+      route: '/dashboard/home',
       hasSubmenu: false,
       title: 'Home',
       submenu: [],
@@ -24,19 +24,19 @@ export class MenuBuilderService {
 
     const modulesNavItem = {
       icon: 'fa-microchip',
-      component: '',
+      route: null,
       hasSubmenu: true,
       title: 'Modules',
       submenu: [
         {
-          icon: 'fa-plus',
-          component: 'modules-add',
-          title: 'Add',
+          icon: 'fa-cogs',
+          route: '/dashboard/modules/manage',
+          title: 'Manage',
         },
         {
-          icon: 'fa-cogs',
-          component: 'modules-manage',
-          title: 'Manage',
+          icon: 'fa-plus',
+          route: '/dashboard/modules/add',
+          title: 'Add',
         },
       ],
     };
@@ -48,7 +48,7 @@ export class MenuBuilderService {
   addLogout() {
     const logoutNavItem = {
       icon: 'fa-power-off',
-      component: null,
+      route: null,
       hasSubmenu: false,
       title: 'Logout',
       submenu: [],

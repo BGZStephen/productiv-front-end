@@ -6,9 +6,12 @@ import { DashboardViewComponent, DashboardHomeComponent} from './components/dash
 const DASHBOARD_ROUTES: Routes = [
   {path: 'dashboard', component: DashboardViewComponent, children: [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
-    {path: 'modules-add', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
-    {path: 'modules-manage', component: DashboardHomeComponent, outlet: 'dashboardOutlet'},
+    {path: 'home', component: DashboardHomeComponent},
+    {path: 'modules', children: [
+      {path: '', redirectTo: 'manage', pathMatch: 'full'},
+      {path: 'manage', component: DashboardHomeComponent},
+      {path: 'add', component: DashboardHomeComponent},
+    ]},
   ]}
 ];
 

@@ -45,16 +45,6 @@ export class DashboardNavbarComponent implements OnInit {
     this.menuVisible = !this.menuVisible;
   }
 
-  setComponent(component) {
-    if (component === null) {
-      this.router.navigate(['/dashboard', {outlets: {'dashboardOutlet': null}}]);
-    } else if (component.length === 0) {
-      return;
-    } else {
-      this.router.navigate(['/dashboard', {outlets: {'dashboardOutlet': [component]}}]);
-    }
-  }
-
   submenuVisibilityStyling(index) {
     if (index !== this.activeSubmenu) {
       return {'max-height': '0'};
