@@ -17,7 +17,7 @@ export class ValidatorsService {
       return true;
     } else {
       return false;
-    }
+    };
   }
 
   validateLogin(userObject) {
@@ -70,5 +70,4 @@ export class ValidatorsService {
       return true;
     }
   }
-
 }
