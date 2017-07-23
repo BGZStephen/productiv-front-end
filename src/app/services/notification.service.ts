@@ -8,12 +8,12 @@ export class NotificationService {
     private flashMessage: FlashMessagesService,
   ) { }
 
-  flashError(error) {
-    this.flashMessage.show(error, {cssClass: 'flash-failure', timeout: 2000});
+  flashError(error, time = 2000) {
+    this.flashMessage.show(error, {cssClass: 'flash-failure', timeout: time});
   }
 
-  flashSuccess(message) {
-    this.flashMessage.show(message, {cssClass: 'flash-success', timeout: 2000});
+  flashSuccess(message, time = 2000) {
+    this.flashMessage.show(message, {cssClass: 'flash-success', timeout: time});
   }
 
 }

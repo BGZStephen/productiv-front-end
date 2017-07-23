@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuBuilderService } from '../../../../services/menu-builder.service';
+import { NotificationService } from '../../../../services/notification.service';
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -15,11 +16,20 @@ export class DashboardNavbarComponent implements OnInit {
 
   constructor(
     private menuBuilder: MenuBuilderService,
+    private notificationService: NotificationService,
     private router: Router,
   ) { }
 
   ngOnInit() {
     this.menu = this.menuBuilder.buildNavbar();
+  }
+
+  logout() {
+    localStorage.clear();
+    this.notificationService.flashSuccess('Logout successful', 900);
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 1000)
   }
 
   menuVisibilityOnResize() {
