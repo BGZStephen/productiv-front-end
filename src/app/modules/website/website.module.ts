@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -20,7 +20,7 @@ import { WebsiteRoutes } from './website.routes';
     WebsiteHomeComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FlashMessagesModule,
     FormsModule,
     HttpModule,

@@ -9,7 +9,6 @@ export class MenuBuilderService {
 
   buildNavbar() {
     this.addDefaults();
-    this.addLogout();
     return this.menu;
   }
 
@@ -42,19 +41,6 @@ export class MenuBuilderService {
     };
 
     this.menu.push(homeNavItem, modulesNavItem);
-    return;
-  }
-
-  addLogout() {
-    const logoutNavItem = {
-      icon: 'fa-power-off',
-      route: null,
-      hasSubmenu: false,
-      title: 'Logout',
-      submenu: [],
-    };
-
-    this.menu.push(logoutNavItem);
     return;
   }
 }

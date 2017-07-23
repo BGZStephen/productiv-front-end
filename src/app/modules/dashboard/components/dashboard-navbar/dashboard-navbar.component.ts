@@ -60,7 +60,7 @@ export class DashboardNavbarComponent implements OnInit {
       return {'max-height': '0'};
     } else {
       const maxHeight = (
-        document.getElementsByClassName('top-level-menu')[index]
+        document.getElementsByClassName('top-level-item')[index]
         .getElementsByClassName('second-level-menu')[0].children.length * 45) + 'px';
         return {'max-height': maxHeight};
       }

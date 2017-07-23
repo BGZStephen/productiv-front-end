@@ -7,9 +7,9 @@ import { WebsiteViewComponent, WebsiteNavbarComponent, WebsiteHomeComponent,
 
 const WEBSITE_ROUTES: Routes = [
   {path: 'site', component: WebsiteViewComponent, children: [
-    {path: '', component: WebsiteHomeComponent, outlet: 'websiteOutlet'},
-    {path: 'login', component: WebsiteLoginComponent, outlet: 'websiteOutlet'},
-    {path: 'register', component: WebsiteRegisterComponent, outlet: 'websiteOutlet'}
+    {path: '', component: WebsiteHomeComponent},
+    {path: 'login', component: WebsiteLoginComponent},
+    {path: 'register', component: WebsiteRegisterComponent}
   ]}
 ];
 
