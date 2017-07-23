@@ -28,7 +28,7 @@ export class DashboardNavbarComponent implements OnInit {
     localStorage.clear();
     this.notificationService.flashSuccess('Logout successful', 900);
     setTimeout(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/site']);
     }, 1000)
   }
 

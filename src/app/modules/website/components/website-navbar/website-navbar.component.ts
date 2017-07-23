@@ -17,14 +17,6 @@ export class WebsiteNavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  clearComponent() {
-    this.router.navigate(['/site', {outlets: {'websiteOutlet': null}}]);
-  }
-
-  setComponent(component) {
-    this.router.navigate(['/site', {outlets: {'websiteOutlet': [component]}}]);
-  }
-
   toggleNavbar() {
     this.navbarVisible = !this.navbarVisible;
   }

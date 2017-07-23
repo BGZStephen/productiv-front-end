@@ -28,11 +28,11 @@ export class WebsiteLoginComponent implements OnInit {
     } else {
       this.apiService.login(userObject)
       .subscribe(res => {
-        this.notificationService.flashSuccess('Login succesdsful');
+        this.notificationService.flashSuccess('Login succesdsful', 900);
         this.apiService.storeToken(res.json().token);
         setTimeout(() => {
           this.router.navigate(['/dashboard']);
-        }, 1500);
+        }, 1000);
       },
       error => {
         this.notificationService.flashError('Error: Invalid email or password');

@@ -8,6 +8,7 @@ export class MenuBuilderService {
   constructor() { }
 
   buildNavbar() {
+    this.menu = []
     this.addDefaults();
     return this.menu;
   }
