@@ -7,8 +7,7 @@ import { WebsiteViewComponent, WebsiteNavbarComponent, WebsiteHomeComponent,
 
 const WEBSITE_ROUTES: Routes = [
   {path: 'site', component: WebsiteViewComponent, children: [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', component: WebsiteHomeComponent},
+    {path: '', component: WebsiteHomeComponent},
     {path: 'login', component: WebsiteLoginComponent},
     {path: 'register', component: WebsiteRegisterComponent}
   ]}

@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 export class ProductivApiService {
 
   siteAuthToken: String = environment.siteAuthToken;
-  apiUrl: String = environment.apiUrl;
+  apiUrl: String = environment.productivApiUrl;
 
   constructor(
     private http: Http,
