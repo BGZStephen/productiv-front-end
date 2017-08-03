@@ -9,6 +9,9 @@ import { DashboardViewComponent, DashboardNavbarComponent, DashboardHomeComponen
 // Routes
 import { DashboardRoutes } from './dashboard.routes';
 
+// Modules
+import { UserManagementModule } from './modules/user-management/user-management.module';
+
 @NgModule({
   declarations: [
     DashboardViewComponent,
@@ -21,7 +24,8 @@ import { DashboardRoutes } from './dashboard.routes';
     FormsModule,
     HttpModule,
     DashboardRoutes,
-    FlashMessagesModule
+    FlashMessagesModule,
+    UserManagementModule
   ],
   providers: [],
   bootstrap: []
