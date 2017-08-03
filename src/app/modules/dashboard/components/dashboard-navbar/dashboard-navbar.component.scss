@@ -49,13 +49,17 @@
 
 .top-level-item:hover > .top-level-item-content {
   background: lighten(#222, 5%);
+  border-bottom: 1px solid lighten(#222, 5%);
+  border-top: 1px solid lighten(#222, 5%);
   color: $primary-red;
 }
 
 .top-level-item-content {
   align-items: center;
+  border-top: inset 1px solid darken(#222, 2%);
+  border-top:  1px solid lighten(#222, 8%);
   border-bottom: 1px solid darken(#222, 2%);
-  border-top: 1px solid lighten(#222, 8%);
+  border-bottom: inset 1px solid lighten(#222, 8%);
   color: white;
   cursor: pointer;
   display: flex;
@@ -72,21 +76,26 @@
   margin-left: 5px;
 }
 
-.second-level-menu {
+.second-level-menu,
+.third-level-menu {
   overflow: hidden;
   transition: 0.3s ease all;
 }
 
-.second-level-item {
+.second-level-item,
+.third-level-item {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.second-level-item-content {
+.second-level-item-content,
+.third-level-item-content {
   align-items: center;
+  border-top: inset 1px solid darken(#222, 2%);
+  border-top:  1px solid lighten(#222, 8%);
   border-bottom: 1px solid darken(#222, 2%);
-  border-top: 1px solid lighten(#222, 8%);
+  border-bottom: inset 1px solid lighten(#222, 8%);
   color: white;
   cursor: pointer;
   display: flex;
@@ -94,12 +103,16 @@
   transition: all 0.3s ease;
 }
 
-.second-level-item-content:hover {
+.second-level-item-content:hover,
+.third-level-item-content:hover {
   background: lighten(#222, 5%);
+  border-bottom: 1px solid lighten(#222, 5%);
+  border-top: 1px solid lighten(#222, 5%);
   color: $primary-red;
 }
 
-.second-level-item-content > i {
+.second-level-item-content > i,
+.third-level-item-content > i {
   padding: 10px;
   width: 35px;
 }

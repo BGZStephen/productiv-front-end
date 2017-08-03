@@ -26,7 +26,7 @@ export class WebsiteRegisterComponent implements OnInit {
     if (!validationPass) {
       return;
     } else {
-      this.apiService.register({user: userObject})
+      this.apiService.register(userObject)
       .subscribe(res => {
         this.notificationService.flashSuccess('Registration successful');
         this.apiService.storeToken(res.json().token);
