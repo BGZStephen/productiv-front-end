@@ -2,9 +2,9 @@
   <div class="navbar-toggle-container">
     <i class="fa fa-bars" (click)="topLevelMenuVisibilityToggle()"></i>
   </div>
-  <div class="navbar" (window:resize)="topLevelMenuVisibilityOnResize()" *ngIf="menu">
+  <div class="navbar" (window:resize)="topLevelMenuVisibilityOnResize()" *ngIf="menu.items">
     <ul class="top-level-menu" [ngStyle]="topLevelMenuVisibilityStyling()">
-      <li class="top-level-item" *ngFor="let topLevelMenu of menu; let i = index">
+      <li class="top-level-item" *ngFor="let topLevelMenu of menu.items; let i = index">
         <div class="top-level-item-content" [routerLink]="topLevelMenu.route" (click)="topLevelMenu.function; secondLevelMenuVisibilityToggle(i)">
           <i class="fa" [ngClass]="topLevelMenu.icon"></i>
           <p class="menu-item-header">{{topLevelMenu.title}}</p>
@@ -12,7 +12,7 @@
         </div>
         <ul class="second-level-menu" *ngIf="topLevelMenu.hasSubmenu" [ngStyle]="secondLevelMenuVisibilityStyling(i)">
           <li class="second-level-item" [routerLink]="secondLevelMenu.route" *ngFor="let secondLevelMenu of topLevelMenu.submenu; let j = index">
-            <div class="second-level-item-content" [routerLink]="secondLevelMenu.route" (click)="secondLevelMenu.function; thirdLevelMenuVisibilityToggle(j)">
+            <div class="second-level-item-content" [routerLink]="secondLevelMenu.route" (click)="secondLevelMenu.function; thirdLevelMenuVisibilityToggle(j); setMenuHeight(i, j)">
               <i class="fa" [ngClass]="secondLevelMenu.icon"></i>
               <p class="menu-item-header">{{secondLevelMenu.title}}</p>
               <i class="fa fa-caret-down" *ngIf="secondLevelMenu.hasSubmenu"></i>

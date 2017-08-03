@@ -10,9 +10,16 @@ import { NotificationService } from '../../../../services/notification.service';
 })
 export class DashboardNavbarComponent implements OnInit {
 
-  activeSubmenu: number = -1;
-  menuVisible = false;
-  menu: Array<object> = [];
+  topLevelMenuVisible = false;
+  activeSecondLevelMenu: number = -1;
+  activeThirdLevelMenu: number = -1;
+  menu = {
+    height: null,
+    items: [],
+    top: null,
+    second: null,
+    third: null
+  }
 
   constructor(
     private menuBuilder: MenuBuilderService,
@@ -21,7 +28,7 @@ export class DashboardNavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.menu = this.menuBuilder.buildNavbar();
+    this.menu.items = this.menuBuilder.buildNavbar();
   }
 
   logout() {
@@ -32,31 +39,45 @@ export class DashboardNavbarComponent implements OnInit {
     }, 1000)
   }
 
-  menuVisibilityOnResize() {
+  topLevelMenuVisibilityOnResize() {
     if (screen.width >= 1024) {
-      this.menuVisible = true;
+      this.topLevelMenuVisible = true;
     } else {
-      this.menuVisible = false;
+      this.topLevelMenuVisible = false;
     }
   }
 
-  menuVisibilityStyling() {
+  topLevelMenuVisibilityStyling() {
     if (screen.width >= 1024) {
-      this.menuVisible = true;
+      this.topLevelMenuVisible = true;
     }
-    if (!this.menuVisible) {
+    if (!this.topLevelMenuVisible) {
       return {'visibility': '0', 'opacity': '0'};
     } else {
       return {'visibility': '1', 'opacity': '1'};
     }
   }
 
-  menuVisibilityToggle() {
-    this.menuVisible = !this.menuVisible;
+  topLevelMenuVisibilityToggle() {
+    this.topLevelMenuVisible = !this.topLevelMenuVisible;
   }
 
-  submenuVisibilityStyling(index) {
-    if (index !== this.activeSubmenu) {
+  setMenuHeight(second = null, third = null) {
+    if (third && second) {
+      this.activeSecondLevelMenu = second == this.activeSecondLevelMenu ? -1 : second
+      this.activeThirdLevelMenu = third == this.activeThirdLevelMenu ? -1 : third
+      this.menu.third = document.getElementsByClassName('third-level-menu')[third].children.length * 45,
+      this.menu.second = document.getElementsByClassName('second-level-menu')[second].children.length * 45,
+      this.menu.top = document.getElementsByClassName('top-level-menu')[0].children.length * 45
+    } else if (!third && second) {
+      this.activeSecondLevelMenu = second == this.activeSecondLevelMenu ? -1 : second
+      this.menu.second = document.getElementsByClassName('top-level-item')[second].getElementsByClassName('second-level-menu')[0].children.length * 45,
+      this.menu.top = document.getElementsByClassName('top-level-menu')[0].children.length * 45
+    }
+  }
+
+  secondLevelMenuVisibilityStyling(index) {
+    if (index != this.activeSecondLevelMenu) {
       return {'max-height': '0'};
     } else {
       const maxHeight = (
@@ -66,12 +87,30 @@ export class DashboardNavbarComponent implements OnInit {
       }
     }
 
-  submenuVisibilityToggle(index) {
-    if (index === this.activeSubmenu) {
-      this.activeSubmenu = -1;
+  secondLevelMenuVisibilityToggle(index) {
+    if (index == this.activeSecondLevelMenu) {
+      return this.activeSecondLevelMenu = -1;
     } else {
-      this.activeSubmenu = index;
+      return this.activeSecondLevelMenu = index;
     }
   }
 
+  thirdLevelMenuVisibilityStyling(index) {
+    if (index !== this.activeThirdLevelMenu) {
+      return {'max-height': '0'};
+    } else {
+      const maxHeight = (
+        document.getElementsByClassName('second-level-item')[index]
+        .getElementsByClassName('third-level-menu')[0].children.length * 45) + 'px';
+        return {'max-height': maxHeight};
+      }
+    }
+
+  thirdLevelMenuVisibilityToggle(index) {
+    if (index === this.activeThirdLevelMenu) {
+      this.activeThirdLevelMenu = -1;
+    } else {
+      this.activeThirdLevelMenu = index;
+    }
+  }
 }
