@@ -22,26 +22,38 @@ export class MenuBuilderService {
       submenu: [],
     };
 
-    const modulesNavItem = {
-      icon: 'fa-microchip',
-      route: null,
+    const settingsNavItem = {
       hasSubmenu: true,
-      title: 'Modules',
+      icon: 'fa-cogs',
+      route: null,
+      title: 'Settings',
       submenu: [
         {
-          icon: 'fa-cogs',
-          route: '/dashboard/modules/manage',
-          title: 'Manage',
-        },
-        {
-          icon: 'fa-plus',
-          route: '/dashboard/modules/add',
-          title: 'Add',
-        },
+          hasSubmenu: true,
+          icon: 'fa-microchip',
+          route: null,
+          title: 'Modules',
+          submenu: [
+            {
+              hasSubmenu: false,
+              icon: 'fa-cogs',
+              route: '/dashboard/modules/manage',
+              title: 'Manage',
+              submenu: [],
+            },
+            {
+              hasSubmenu: false,
+              icon: 'fa-plus',
+              route: '/dashboard/modules/add',
+              title: 'Add',
+              submenu: [],
+            },
+          ],
+        }
       ],
     };
 
-    this.menu.push(homeNavItem, modulesNavItem);
+    this.menu.push(homeNavItem, settingsNavItem);
     return;
   }
 }
