@@ -14,11 +14,9 @@ export class DashboardNavbarComponent implements OnInit {
   activeSecondLevelMenu: number = -1;
   activeThirdLevelMenu: number = -1;
   menu = {
-    height: null,
     items: [],
-    top: null,
-    second: null,
-    third: null
+    secondLevelHeight: null,
+    thirdLevelHeight: null
   }
 
   constructor(
@@ -63,16 +61,15 @@ export class DashboardNavbarComponent implements OnInit {
   }
 
   setMenuHeight(second = null, third = null) {
-    if (third && second) {
-      this.activeSecondLevelMenu = second == this.activeSecondLevelMenu ? -1 : second
-      this.activeThirdLevelMenu = third == this.activeThirdLevelMenu ? -1 : third
-      this.menu.third = document.getElementsByClassName('third-level-menu')[third].children.length * 45,
-      this.menu.second = document.getElementsByClassName('second-level-menu')[second].children.length * 45,
-      this.menu.top = document.getElementsByClassName('top-level-menu')[0].children.length * 45
-    } else if (!third && second) {
-      this.activeSecondLevelMenu = second == this.activeSecondLevelMenu ? -1 : second
-      this.menu.second = document.getElementsByClassName('top-level-item')[second].getElementsByClassName('second-level-menu')[0].children.length * 45,
-      this.menu.top = document.getElementsByClassName('top-level-menu')[0].children.length * 45
+    if (parseInt(third) >= 0 && parseInt(second) >= 0) {
+      this.activeThirdLevelMenu = third == this.activeThirdLevelMenu ? -1 : third;
+      this.menu.thirdLevelHeight = document.getElementsByClassName('second-level-item')[third].getElementsByClassName('third-level-menu')[0].children.length * 45;
+      this.menu.secondLevelHeight = document.getElementsByClassName('top-level-item')[second].getElementsByClassName('second-level-menu')[0].children.length * 45 + this.menu.thirdLevelHeight;
+    } else if (!third && parseInt(second) >= 0) {
+      this.activeThirdLevelMenu = -1;
+      this.activeSecondLevelMenu = second == this.activeSecondLevelMenu ? -1 : second;
+      this.menu.secondLevelHeight = document.getElementsByClassName('top-level-item')[second].getElementsByClassName('second-level-menu')[0].children.length * 45;
+      this.menu.thirdLevelHeight = 0;
     }
   }
 
@@ -80,18 +77,7 @@ export class DashboardNavbarComponent implements OnInit {
     if (index != this.activeSecondLevelMenu) {
       return {'max-height': '0'};
     } else {
-      const maxHeight = (
-        document.getElementsByClassName('top-level-item')[index]
-        .getElementsByClassName('second-level-menu')[0].children.length * 45) + 'px';
-        return {'max-height': maxHeight};
-      }
-    }
-
-  secondLevelMenuVisibilityToggle(index) {
-    if (index == this.activeSecondLevelMenu) {
-      return this.activeSecondLevelMenu = -1;
-    } else {
-      return this.activeSecondLevelMenu = index;
+      return {'max-height': this.menu.secondLevelHeight + 'px'};
     }
   }
 
@@ -99,18 +85,7 @@ export class DashboardNavbarComponent implements OnInit {
     if (index !== this.activeThirdLevelMenu) {
       return {'max-height': '0'};
     } else {
-      const maxHeight = (
-        document.getElementsByClassName('second-level-item')[index]
-        .getElementsByClassName('third-level-menu')[0].children.length * 45) + 'px';
-        return {'max-height': maxHeight};
-      }
-    }
-
-  thirdLevelMenuVisibilityToggle(index) {
-    if (index === this.activeThirdLevelMenu) {
-      this.activeThirdLevelMenu = -1;
-    } else {
-      this.activeThirdLevelMenu = index;
+      return {'max-height': this.menu.thirdLevelHeight + 'px'};
     }
   }
 }
