@@ -14,8 +14,8 @@ import { MenuBuilderService } from './services/menu-builder.service';
 import { ProductivApiService } from './services/productiv-api.service';
 
 // modules
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { WebsiteModule } from './modules/website/website.module';
+import { DashboardModule } from './modules/dashboard.module';
+import { WebsiteModule } from './modules/website.module';
 
 @NgModule({
   declarations: [

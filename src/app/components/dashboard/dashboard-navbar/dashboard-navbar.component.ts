@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuBuilderService } from '../../../../services/menu-builder.service';
-import { NotificationService } from '../../../../services/notification.service';
+import { MenuBuilderService } from '../../../services/menu-builder.service';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -17,13 +17,13 @@ export class DashboardNavbarComponent implements OnInit {
     items: [],
     secondLevelHeight: null,
     thirdLevelHeight: null
-  }
+  };
 
-  constructor(
+  constructor (
     private menuBuilder: MenuBuilderService,
     private notificationService: NotificationService,
     private router: Router,
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.menu.items = this.menuBuilder.buildNavbar();

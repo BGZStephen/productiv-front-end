@@ -1,7 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 
 // dashboard specific
-import { DashboardViewComponent, DashboardHomeComponent} from './components/dashboard-components-barrel';
+import { DashboardViewComponent, DashboardHomeComponent} from '../components/components-barrel';
+
+// profile
+// import { ProfileManagementComponent } from '../components/components-barrel';
 
 const DASHBOARD_ROUTES: Routes = [
   {path: 'dashboard', component: DashboardViewComponent, children: [
@@ -12,6 +15,7 @@ const DASHBOARD_ROUTES: Routes = [
       {path: 'manage', component: DashboardHomeComponent},
       {path: 'add', component: DashboardHomeComponent},
     ]},
+    // {path: 'profile', component: ProfileManagementComponent},
   ]}
 ];
 

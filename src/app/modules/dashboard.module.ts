@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DashboardViewComponent, DashboardNavbarComponent, DashboardHomeComponent,
-         DashboardNotificationBarComponent} from './components/dashboard-components-barrel';
+         DashboardNotificationBarComponent} from '../components/components-barrel';
 
 // Routes
-import { DashboardRoutes } from './dashboard.routes';
+import { DashboardRoutes } from '../routes/dashboard.routes';
 
 // Modules
-import { UserManagementModule } from './modules/user-management/user-management.module';
+import { UserManagementModule } from './user-management.module';
 
 @NgModule({
   declarations: [

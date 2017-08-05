@@ -6,10 +6,10 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // components
 import { WebsiteViewComponent, WebsiteRegisterComponent, WebsiteLoginComponent,
-         WebsiteNavbarComponent, WebsiteHomeComponent } from './components/website-components-barrel';
+         WebsiteNavbarComponent, WebsiteHomeComponent } from '../components/components-barrel';
 
 // routes
-import { WebsiteRoutes } from './website.routes';
+import { WebsiteRoutes } from '../routes/website.routes';
 
 @NgModule({
   declarations: [

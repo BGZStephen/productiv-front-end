@@ -49,7 +49,13 @@ export class MenuBuilderService {
               submenu: [],
             },
           ],
-        }
+        },
+        {
+          hasSubmenu: false,
+          icon: 'fa-user',
+          route: 'profile',
+          title: 'Profile',
+        },
       ],
     };
 
