@@ -6,7 +6,6 @@ import { NotificationService } from '../../../services/notification.service';
 @Component({
   selector: 'app-dashboard-navbar',
   templateUrl: './dashboard-navbar.component.html',
-  styleUrls: ['./dashboard-navbar.component.scss']
 })
 export class DashboardNavbarComponent implements OnInit {
 

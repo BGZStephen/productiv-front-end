@@ -1,17 +1,19 @@
-<div class="main-container">
-  <div class="register-container">
-    <form class="register-form" #f="ngForm" (ngSubmit)="register(f.value)">
-      <label class="register-label" for="firstName">First name</label>
-      <input id="firstName" class="register-input" type="text" placeholder="John" name="firstName" #firstName ngModel>
-      <label class="register-label" for="lastName">Last name</label>
-      <input id="lastName" class="register-input" type="text" placeholder="Doe" name="lastName" #lastName ngModel>
-      <label class="register-label" for="email">Email</label>
-      <input id="email" class="register-input" type="text" placeholder="john@doe.com" name="email" #email ngModel>
-      <label class="register-label" for="password">Password</label>
-      <input id="password" class="register-input" type="password" placeholder="************" name="password" #password ngModel>
-      <label class="register-label" for="passwordConfirm">Confirm password</label>
-      <input id="passwordConfirm" class="register-input" type="password" placeholder="************" name="passwordConfirm" #passwordConfirm ngModel>
-      <input class="register-submit" type="submit" value="register">
-    </form>
+<div id="website-register">
+  <div class="main-container">
+    <div class="register-container">
+      <form class="register-form" #f="ngForm" (ngSubmit)="register(f.value)">
+        <label class="register-label" for="firstName">First name</label>
+        <input id="firstName" class="register-input" type="text" placeholder="John" name="firstName" #firstName ngModel>
+        <label class="register-label" for="lastName">Last name</label>
+        <input id="lastName" class="register-input" type="text" placeholder="Doe" name="lastName" #lastName ngModel>
+        <label class="register-label" for="email">Email</label>
+        <input id="email" class="register-input" type="text" placeholder="john@doe.com" name="email" #email ngModel>
+        <label class="register-label" for="password">Password</label>
+        <input id="password" class="register-input" type="password" placeholder="************" name="password" #password ngModel>
+        <label class="register-label" for="passwordConfirm">Confirm password</label>
+        <input id="passwordConfirm" class="register-input" type="password" placeholder="************" name="passwordConfirm" #passwordConfirm ngModel>
+        <input class="register-submit" type="submit" value="register">
+      </form>
+    </div>
   </div>
 </div>

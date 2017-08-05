@@ -1,16 +1,18 @@
-<div class="main-container">
-  <div class="navbar-container">
-    <div class="logo-container">
-      <h1 class="logo-text" [routerLink]="['/site']">Productiv</h1>
-      <a class="fa fa-bars" (click)="toggleNavbar()"></a>
+<div id="website-navbar">
+  <div class="main-container">
+    <div class="navbar-container">
+      <div class="logo-container">
+        <h1 class="logo-text" [routerLink]="['/site']">Productiv</h1>
+        <a class="fa fa-bars" (click)="toggleNavbar()"></a>
+      </div>
+      <ul class="navbar" (window:resize)="resizeNavbarVisibility()" [ngStyle]="navbarStyle()">
+        <div class="navbar-left">
+        </div>
+        <div class="navbar-right">
+          <li class="navbar-item" [routerLink]="['register']"><i class="fa fa-pencil-square-o"></i>Register</li>
+          <li class="navbar-item" [routerLink]="['login']"><i class="fa fa-sign-in"></i>Login</li>
+        </div>
+      </ul>
     </div>
-    <ul class="navbar" (window:resize)="resizeNavbarVisibility()" [ngStyle]="navbarStyle()">
-      <div class="navbar-left">
-      </div>
-      <div class="navbar-right">
-        <li class="navbar-item" [routerLink]="['register']"><i class="fa fa-pencil-square-o"></i>Register</li>
-        <li class="navbar-item" [routerLink]="['login']"><i class="fa fa-sign-in"></i>Login</li>
-      </div>
-    </ul>
   </div>
 </div>

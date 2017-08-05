@@ -1,0 +1,60 @@
+#website-register {
+  .main-container {
+    width: 100%
+  }
+
+  .register-container {
+    align-items: center;
+    background: #222;
+    background-image: url('/assets/images/background.png');
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 52px);
+    padding: 0 10px;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .register-label {
+    color: white;
+    @media(min-width: 768px) {
+      font-size: 1.2em;
+    }
+  }
+
+  .register-input {
+    background: none;
+    color: white;
+    border: 2px solid white;
+    font-size: 1.2em;
+    margin: 8px 0 15px;
+    padding: 10px 10px;
+    transition: 0.3s ease all;
+    @media(min-width: 768px) {
+      font-size: 1.4em;
+    }
+  }
+
+  .register-input:focus {
+    border: 2px solid $primary-red;
+  }
+
+  .register-submit {
+    background: $primary-red;
+    border: 1px solid $primary-red;
+    border-bottom: 3px solid darken($primary-red, 20%);
+    border-right: 3px solid darken($primary-red, 30%);
+    font-size: 1.2em;
+    margin-top: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+    @media(min-width: 768px) {
+      font-size: 1.4em;
+    }
+  }
+}

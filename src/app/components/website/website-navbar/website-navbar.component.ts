@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-website-navbar',
   templateUrl: './website-navbar.component.html',
-  styleUrls: ['./website-navbar.component.scss']
 })
 export class WebsiteNavbarComponent implements OnInit {
 

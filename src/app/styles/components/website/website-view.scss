@@ -1,0 +1,12 @@
+#website-view {
+  .main-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .flash-messages-container {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

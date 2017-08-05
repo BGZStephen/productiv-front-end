@@ -1,0 +1,13 @@
+@import './includes/globals';
+@import './includes/variables';
+
+@import './components/dashboard/dashboard-home';
+@import './components/dashboard/dashboard-navbar';
+@import './components/dashboard/dashboard-notification-bar';
+@import './components/dashboard/dashboard-view';
+
+@import './components/website/website-home';
+@import './components/website/website-login';
+@import './components/website/website-navbar';
+@import './components/website/website-register';
+@import './components/website/website-view';

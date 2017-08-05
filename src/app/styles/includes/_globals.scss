@@ -1,0 +1,27 @@
+// global styles
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.flash-failure {
+  background: darken(red, 30%);
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.flash-success {
+  background: darken(green, 10%);
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 10px 15px;
+  width: 100%;
+}
