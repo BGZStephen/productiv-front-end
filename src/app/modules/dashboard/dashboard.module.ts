@@ -4,20 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DashboardViewComponent, DashboardNavbarComponent, DashboardHomeComponent,
-         DashboardNotificationBarComponent} from '../components/components-barrel';
+         DashboardNotificationBarComponent} from './dashboard-components-barrel';
+
+import { ProfileViewComponent } from './dashboard-components-barrel';
 
 // Routes
-import { DashboardRoutes } from '../routes/dashboard.routes';
+import { DashboardRoutes } from './dashboard.routes';
 
-// Modules
-import { UserManagementModule } from './user-management.module';
+// services
+import { MenuBuilderService } from './services/menu-builder.service'
 
 @NgModule({
   declarations: [
     DashboardViewComponent,
     DashboardHomeComponent,
     DashboardNavbarComponent,
-    DashboardNotificationBarComponent
+    DashboardNotificationBarComponent,
+    ProfileViewComponent
   ],
   imports: [
     CommonModule,
@@ -25,9 +28,8 @@ import { UserManagementModule } from './user-management.module';
     HttpModule,
     DashboardRoutes,
     FlashMessagesModule,
-    UserManagementModule
   ],
-  providers: [],
+  providers: [MenuBuilderService],
   bootstrap: []
 })
 export class DashboardModule { }

@@ -10,12 +10,10 @@ import { AppRoutes } from './app.routes';
 // services
 import { NotificationService } from './services/notification.service';
 import { ValidatorsService } from './services/validators.service';
-import { MenuBuilderService } from './services/menu-builder.service';
-import { ProductivApiService } from './services/productiv-api.service';
 
 // modules
-import { DashboardModule } from './modules/dashboard.module';
-import { WebsiteModule } from './modules/website.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { WebsiteModule } from './modules/website/website.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +27,7 @@ import { WebsiteModule } from './modules/website.module';
     WebsiteModule,
     DashboardModule,
   ],
-  providers: [NotificationService, ValidatorsService, MenuBuilderService, ProductivApiService],
+  providers: [NotificationService, ValidatorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

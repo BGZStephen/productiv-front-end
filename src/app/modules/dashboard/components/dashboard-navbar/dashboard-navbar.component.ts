@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuBuilderService } from '../../../services/menu-builder.service';
-import { NotificationService } from '../../../services/notification.service';
+import { MenuBuilderService } from '../../services/menu-builder.service';
+import { NotificationService } from '../../../../services/notification.service';
 
 @Component({
   selector: 'app-dashboard-navbar',

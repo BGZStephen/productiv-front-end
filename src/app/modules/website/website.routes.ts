@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // site specific
 import { WebsiteViewComponent, WebsiteNavbarComponent, WebsiteHomeComponent,
-         WebsiteLoginComponent, WebsiteRegisterComponent } from '../components/components-barrel';
+         WebsiteLoginComponent, WebsiteRegisterComponent } from './website-components-barrel';
 
 
 const WEBSITE_ROUTES: Routes = [

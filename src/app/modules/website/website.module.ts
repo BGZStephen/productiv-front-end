@@ -6,10 +6,13 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // components
 import { WebsiteViewComponent, WebsiteRegisterComponent, WebsiteLoginComponent,
-         WebsiteNavbarComponent, WebsiteHomeComponent } from '../components/components-barrel';
+         WebsiteNavbarComponent, WebsiteHomeComponent } from './website-components-barrel';
 
 // routes
-import { WebsiteRoutes } from '../routes/website.routes';
+import { WebsiteRoutes } from './website.routes';
+
+// services
+import { ProductivApiService } from './services/productiv-api.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,7 @@ import { WebsiteRoutes } from '../routes/website.routes';
     HttpModule,
     WebsiteRoutes,
   ],
-  providers: [],
+  providers: [ProductivApiService],
   bootstrap: []
 })
 export class WebsiteModule { }

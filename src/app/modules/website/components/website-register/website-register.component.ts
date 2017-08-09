@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductivApiService } from '../../../services/productiv-api.service';
-import { ValidatorsService } from '../../../services/validators.service';
-import { NotificationService } from '../../../services/notification.service';
+import { ProductivApiService } from '../../services/productiv-api.service';
+import { ValidatorsService } from '../../../../services/validators.service';
+import { NotificationService } from '../../../../services/notification.service';
 
 @Component({
   selector: 'app-website-register',
